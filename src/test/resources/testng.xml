@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG" verbose="1">
+	<test name="Regression1">
+		<packages>
+			<package name="com.vmware.ramkumar" />
+		</packages>
+	</test>
+
+	<test name="JunitTest" junit="true">
+		<packages>
+			<package name="com.vmware.ramkumar" />
+		</packages>
+	</test>
+
+</suite>
