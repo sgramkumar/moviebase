@@ -17,8 +17,9 @@ public class MovieService {
 		return count;
 	}
 
-	public void removeByName(String movie) {
-		// TODO Auto-generated method stub
+	public void removeByName(String movie) throws MovieException {
+		if (count == 0) 
+			throw new MovieException ("There are no movies in the service");
 		count--;
 	}
 
