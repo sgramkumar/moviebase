@@ -13,9 +13,13 @@ public class MovieServiceTest {
 		movieService.addMovie(new Movie("Wall-E"));
 		assertEquals(movieService.getCount(), 2);
 	}
-	
+
 	@Test
 	public void addOneMovieAbdGetTheTotal() {
+		// Subject Under Test
+		MovieService movieService = new MovieService("VMware Movie Night");
+		movieService.addMovie(new Movie("E.T. - Extra Terrestrial"));
+		assertEquals(movieService.getCount(), 1);
 	}
 
 	@Test
