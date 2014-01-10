@@ -49,7 +49,7 @@ public class MovieServiceTest {
 			movieService.removeByName("Wall-E");
 			fail("Was expecting an exception in removeAMovieFromAnEmptyService");
 		} catch (MovieException e) {
-			assertEquals(e.getMessage(), "There are no movies in the service.");
+			assertEquals(e.getMessage(), "There are no movies in the service");
 		}
 	}
 
