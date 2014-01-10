@@ -1,14 +1,22 @@
 package com.vmware.ramkumar;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.*;
 
 public class MovieServiceTest {
 
+	private MovieService movieService;
+
+	@BeforeMethod
+	public void setUp() {
+		// Subject Under Test
+		movieService = new MovieService("VMware Movie Night");
+
+	}
 	@Test
 	public void addTwoMovieAbdGetTheTotal() {
-		// Subject Under Test
-		MovieService movieService = new MovieService("VMware Movie Night");
 		movieService.addMovie(new Movie("E.T. - Extra Terrestrial"));
 		movieService.addMovie(new Movie("Wall-E"));
 		assertEquals(movieService.getCount(), 2);
@@ -16,14 +24,32 @@ public class MovieServiceTest {
 
 	@Test
 	public void addOneMovieAbdGetTheTotal() {
-		// Subject Under Test
-		MovieService movieService = new MovieService("VMware Movie Night");
 		movieService.addMovie(new Movie("E.T. - Extra Terrestrial"));
 		assertEquals(movieService.getCount(), 1);
 	}
 
 	@Test
 	public void getTheTotalWithNoMovies() {
+		assertEquals(movieService.getCount(), 0);
+
 	}
 
+	@Test
+	public void removeAMovieAndGettheTotal() {
+		movieService.addMovie(new Movie("E.T. - Extra Terrestrial"));
+		movieService.addMovie(new Movie("Wall-E"));
+		movieService.removeByName("Wall-E");
+
+		assertEquals(movieService.getCount(), 1);
+	}
+
+	@Test
+	public void removeAMovieFromAnEmptyService() {
+
+	}
+
+	@Test
+	public void removeAMovieThatDoesntExist() {
+
+	}
 }
