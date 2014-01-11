@@ -17,11 +17,11 @@ public class MovieService {
 	public void addMovie(Movie movie) {
 		movies.add(movie);
 	}
-
+	
 	public int getCount() {
 		return movies.size();
 	}
-
+/*
 	public void removeByName(String movie) throws MovieException {
 		if (movies.size() == 0) 
 			throw new MovieException ("There are no movies in the service");
@@ -35,4 +35,5 @@ public class MovieService {
 		}
 		throw new MovieException("That movie does not exist in the service");
 	}
+	*/
 }
