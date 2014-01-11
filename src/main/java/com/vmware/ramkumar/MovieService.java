@@ -5,7 +5,6 @@ import java.util.List;
 
 public class MovieService {
 
-	private int count = 0;
 	private List<Movie> movies = new ArrayList<Movie>();
 
 	public MovieService(String title) {
@@ -13,22 +12,20 @@ public class MovieService {
 
 	public void addMovie(Movie movie) {
 		movies.add(movie);
-		count++;
 	}
 
 	public int getCount() {
-		return count;
+		return movies.size();
 	}
 
 	public void removeByName(String movie) throws MovieException {
-		if (count == 0) 
+		if (movies.size() == 0) 
 			throw new MovieException ("There are no movies in the service");
 
 		for (Movie m : movies) {
 			if (m.getName().equals(movie)) {
-			// if (m.toString().equalsIgnoreCase(movie)) {
+				// if (m.toString().equalsIgnoreCase(movie)) {
 				movies.remove(m);
-				count--;
 				return;
 			}
 		}
