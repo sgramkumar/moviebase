@@ -32,7 +32,7 @@ public class MovieServiceTest {
 		assertEquals(movieService.getCount(), 0);
 
 	}
-/*
+
 	@Test
 	public void removeAMovieAndGettheTotal() throws MovieException {
 		movieService.addMovie(new Movie("E.T. - Extra Terrestrial"));
@@ -51,7 +51,7 @@ public class MovieServiceTest {
 			assertEquals(e.getMessage(), "There are no movies in the service");
 		}
 	}
-
+/*
 	@Test
 	public void removeAMovieTitanicDoesntExist() {
 		movieService.addMovie(new Movie("E.T. - Extra Terrestrial"));
