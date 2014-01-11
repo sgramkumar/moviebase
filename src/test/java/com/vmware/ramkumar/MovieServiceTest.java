@@ -47,14 +47,35 @@ public class MovieServiceTest {
 	public void removeAMovieFromAnEmptyService() {
 		try {
 			movieService.removeByName("Wall-E");
-			fail("Was expecting an exception in removeAMovieFromAnEmptyService");
+			fail("Was expecting an exception in removeAMovieFromAnEmptyService()");
 		} catch (MovieException e) {
 			assertEquals(e.getMessage(), "There are no movies in the service");
 		}
 	}
 
 	@Test
-	public void removeAMovieThatDoesntExist() {
+	public void removeAMovieTitanicDoesntExist() {
+		movieService.addMovie(new Movie("E.T. - Extra Terrestrial"));
+		movieService.addMovie(new Movie("Wall-E"));
 
+		try {
+			movieService.removeByName("Titanic");
+			fail("Was expecting an exception in removeAMovieThatDoesntExist()");
+		} catch (MovieException e) {
+			assertEquals(e.getMessage(), "That movie does not exist in the service");
+		}
+	}
+	
+	@Test
+	public void removeAMovieTestDoesntExist() {
+		movieService.addMovie(new Movie("E.T. - Extra Terrestrial"));
+		movieService.addMovie(new Movie("Wall-E"));
+
+		try {
+			movieService.removeByName("Test");
+			fail("Was expecting an exception in removeAMovieThatDoesntExist()");
+		} catch (MovieException e) {
+			assertEquals(e.getMessage(), "That movie does not exist in the service");
+		}
 	}
 }
